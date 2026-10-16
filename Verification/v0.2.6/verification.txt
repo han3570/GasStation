@@ -1,0 +1,37 @@
+v0.2.6 verification
+Unity 6000.6.0f1; Android target; no player build.
+
+EditMode: 97 passed / 0 failed / 0 skipped.
+PlayMode: 14 passed / 0 failed / 0 skipped.
+Total: 111 passed.
+
+Coverage includes exact retail/at-cost/free settlement boundaries, 1 mL rounding,
+fractional-won accumulation, arrival price snapshot, duplicate transaction IDs,
+failed customer charges, retry deferral, closing customer settlement, session reset,
+30/60/120 FPS settlement consistency, invariant CSV, full-shift sums, existing score
+and bonus rules, actual UI input and visible financial receipt/summary.
+
+Seed 12345 autoplay:
+33 customers, all Success; score 8939 (same as v0.2.5).
+Revenue: 2178169500 milli-won = 2,178,169.5 won.
+Fuel cost: 1635169500 milli-won = 1,635,169.5 won.
+Fuel sales profit: 543000000 milli-won = 543,000 won.
+CSV: session.csv. All totals verified against each row's exact integer money.
+
+Visually inspected transaction-sale.png, result.png, overfill-failure.png,
+and closing-success-result.png at 1080 x 1920. No text overlaps in these screens.
+
+Backup before economic changes:
+GitHub: https://github.com/han3570/GasStation
+Tag: backup/v0.2.5-pre-economy-20261017
+Commit: a64dcfb5b05d343d297886bc9b793260d4da7702
+Local archive: Backups/pre-economy-v0.2.5-20261017-011212.zip
+Archive size: 20976979 bytes; 217 entries.
+SHA256: 69C46A12948B63DE0022453BB2163D85382C1370761709446C1136830A0D06DA
+
+Existing APK unchanged: Builds/Android/PressureStation.apk
+Size: 84531988 bytes. Modified: 2026-10-10 22:33:49 local time.
+No Windows or APK build performed. Physical phone testing is not included.
+
+Scope: fuel sale accounting only. Cash balances, inventory, restocking and fixed
+costs are not introduced. Scores and bonuses remain separate from money.

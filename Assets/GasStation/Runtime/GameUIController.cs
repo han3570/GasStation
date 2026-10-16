@@ -22,6 +22,7 @@ namespace GasStation
         Text soundLabel, fuelInfo, volumeStats, seedLabel, holdLabel, resultNote;
         Text lossHistory, failurePenalty, failureDetails, resultLoss, residualHint;
         Text operatingLabel;
+        Text priceInfo, totalProfit, lastSale, resultRevenue, resultCost, resultProfit, transactionSale;
         GameObject failurePanel;
         GameObject successPanel;
         CanvasGroup successOpacity;
@@ -47,7 +48,7 @@ namespace GasStation
             // Quiet orange masthead and compact operational dashboard.
             Box(board,"Brand",24,31,42,42,amber); Label(board,"P",24,29,42,42,29,ink,TextAnchor.MiddleCenter,true);
             Label(board,"PRESSURE STATION",79,30,335,27,23,cream,TextAnchor.MiddleLeft,true);
-            Label(board,"한 번의 터치, 마지막 한 방울까지.",80,62,340,18,11,muted);
+            priceInfo=Label(board,"",80,62,340,18,11,muted);
             var sound=Button(board,"♪",436,33,34,34,panel,cream,ToggleSound); soundLabel=sound.GetComponentInChildren<Text>();
             Button(board,"Ⅱ",482,33,34,34,panel,cream,session.TogglePause);
             Box(board,"Dashboard",24,108,492,100,panel);
@@ -59,9 +60,12 @@ namespace GasStation
             Label(board,"총 점수",374,120,127,20,12,muted);
             score=Label(board,"0",374,147,127,43,32,amber,TextAnchor.MiddleLeft,true);
             lossHistory=Label(board,"",24,210,492,18,11,red,TextAnchor.MiddleRight);
-            station=Art(board,24,228,492,280,PrototypeGraphic.Illustration.Station);
-            Label(board,"SELF SERVICE",42,237,160,17,10,cream,TextAnchor.MiddleLeft,true);
-            Label(board,"01 / SINGLE PUMP",331,237,165,17,10,cream,TextAnchor.MiddleRight);
+            Box(board,"Sales Dashboard",24,230,492,36,panel);
+            totalProfit=Label(board,"",34,232,245,31,14,mint,TextAnchor.MiddleLeft,true);
+            lastSale=Label(board,"",284,232,222,31,11,cream,TextAnchor.MiddleRight);
+            station=Art(board,24,274,492,234,PrototypeGraphic.Illustration.Station);
+            Label(board,"SELF SERVICE",42,283,160,17,10,cream,TextAnchor.MiddleLeft,true);
+            Label(board,"01 / SINGLE PUMP",331,283,165,17,10,cream,TextAnchor.MiddleRight);
             Box(board,"BayLight",42,475,6,6,mint);
             status=Label(board,"주유 준비 완료",56,466,410,26,11,muted);
             carName=Label(board,"경차",24,525,200,39,28,cream,TextAnchor.MiddleLeft,true);
@@ -105,6 +109,9 @@ namespace GasStation
             failurePenalty=Label(failurePanel.transform,"−80점",16,52,460,64,46,red,TextAnchor.MiddleCenter,true);
             failureDetails=Label(failurePanel.transform,"",16,125,460,49,14,cream,TextAnchor.MiddleCenter);
             failurePanel.SetActive(false);
+            var saleCard=Box(board,"Transaction Sale",24,748,492,53,panel);
+            transactionSale=Label(saleCard.transform,"",10,1,472,51,12,cream,TextAnchor.MiddleCenter);
+            saleCard.gameObject.SetActive(false);
             successPanel=Rect(board,"Success Celebration",24,264,492,178).gameObject;
             successOpacity=successPanel.AddComponent<CanvasGroup>();
             successOpacity.interactable=false; successOpacity.blocksRaycasts=false;
@@ -127,9 +134,9 @@ namespace GasStation
             var p=startPanel.transform;
             Box(p,"Brand",24,37,42,42,amber); Label(p,"P",24,35,42,42,29,ink,TextAnchor.MiddleCenter,true);
             Label(p,"PRESSURE STATION",80,37,410,27,24,cream,TextAnchor.MiddleLeft,true);
-            Label(p,"압력 주유 프로토타입  /  v0.2.5",80,69,410,21,11,muted);
+            Label(p,"압력 주유 프로토타입  /  v0.2.6",80,69,410,21,11,muted);
             Label(p,"한 번의 터치.\n마지막 한 방울.",24,135,492,137,49,cream,TextAnchor.MiddleLeft,true);
-            Label(p,"차량마다 다른 목표량, 정확하게 멈추세요.\n3분 동안 당신만의 주유소를 운영합니다.",24,292,492,63,17,muted);
+            Label(p,"차량마다 다른 목표량, 정확하게 멈추세요.\n점수와 함께 주유 이익도 쌓입니다.",24,292,492,63,17,muted);
             Art(p,24,386,492,280,PrototypeGraphic.Illustration.Station);
             Label(p,"OPEN  /  READY FOR YOUR FIRST SHIFT",42,395,440,22,11,cream);
             string[] titles={"누르고", "놓고", "기다리세요"};
@@ -162,7 +169,16 @@ namespace GasStation
             resultScore=Label(p,"0",24,264,492,102,76,amber,TextAnchor.MiddleCenter,true);
             resultLoss=Label(p,"",24,369,492,46,14,red,TextAnchor.MiddleCenter,true);
             Box(p,"Result Card",24,419,492,401,panel);
-            resultStats=Label(p,"",45,437,450,363,19,cream);
+            Label(p,"매출",40,432,140,22,12,muted);
+            Label(p,"연료 원가",205,432,140,22,12,muted);
+            Label(p,"주유 이익",370,432,130,22,12,mint);
+            resultRevenue=Label(p,"",40,459,145,35,18,cream,TextAnchor.MiddleLeft,true);
+            resultCost=Label(p,"",205,459,145,35,18,cream,TextAnchor.MiddleLeft,true);
+            resultProfit=Label(p,"",370,459,130,35,18,mint,TextAnchor.MiddleLeft,true);
+            Label(p,"매출 − 연료 원가 · 점수 보너스는 금액과 별도",40,501,460,22,11,muted);
+            Box(p,"Sales Divider",40,537,460,1,line);
+            resultStats=Label(p,"",45,553,450,252,17,cream);
+            resultStats.lineSpacing=1.3f;
             volumeStats=Label(p,"",24,835,492,44,12,mint,TextAnchor.MiddleCenter);
             resultNote=Label(p,"",24,883,492,22,11,muted,TextAnchor.MiddleCenter);
             Button(p,"다시 영업하기  →",24,933,492,76,amber,ink,session.StartSession,23);
@@ -236,6 +252,19 @@ namespace GasStation
             operatingLabel.text=s.OperatingEnded?"영업 마감":"남은 영업시간";
             operating.color=s.OperatingEnded?amber:cream;
             score.text=r.TotalScore.ToString("N0"); count.text=r.Records.Count.ToString("00");
+            priceInfo.text=$"판매 {request?.SalePricePerLiter ?? session.settings.salePricePerLiter:N0}원/L · 원가 {request?.FuelCostPerLiter ?? session.settings.fuelCostPerLiter:N0}원/L";
+            totalProfit.text=$"누적 이익 {Money(r.TotalProfitWon)}";
+            totalProfit.color=r.TotalProfitMilliWon<0?red:mint;
+            lastSale.text=s.LastRecord==null?"첫 차량을 기다리고 있어요":$"직전 이익 {Money(s.LastRecord.sale.ProfitWon)}";
+            bool saleVisible=s.LastRecord!=null && (s.State==SessionState.Feedback || s.State==SessionState.Arrival);
+            transactionSale.transform.parent.gameObject.SetActive(saleVisible);
+            carTime.gameObject.SetActive(!saleVisible);
+            if(saleVisible)
+            {
+                var sale=s.LastRecord.sale;
+                transactionSale.text=$"매출 {Money(sale.RevenueWon)}  ·  원가 {Money(sale.CostWon)}  ·  이익 {Money(sale.ProfitWon)}\n"+
+                    (sale.AtCostMilliliters>0?$"초과분 {sale.AtCostMilliliters/1000m:0.###} L는 원가 판매 · 추가 이익 0원":"주유한 실제 연료량으로 정산했습니다.");
+            }
             bool overfillFeedback=s.State==SessionState.Feedback && s.LastRecord?.outcome==FuelingOutcome.Overfill;
             score.color=overfillFeedback?red:amber;
             RefreshCelebration(s);
@@ -305,6 +334,10 @@ namespace GasStation
             }
             if(s.State==SessionState.Result)
             {
+                resultRevenue.text=Money(r.TotalRevenueWon);
+                resultCost.text=Money(r.TotalCostWon);
+                resultProfit.text=Money(r.TotalProfitWon);
+                resultProfit.color=r.TotalProfitMilliWon<0?red:mint;
                 resultScore.text=r.TotalScore.ToString("N0");
                 resultScore.color=r.TotalScore<0?red:amber;
                 resultLoss.text=r.TotalPenalty>0?$"이번 영업의 누적 감점 −{r.TotalPenalty:N0}점":"이번 영업의 감점 0점";
@@ -314,11 +347,13 @@ namespace GasStation
                 string large=r.CountVolumeGroup(false)==0?"—":$"{r.AverageVolumeTime(false):0.00} s ({r.CountVolumeGroup(false)}대)";
                 volumeStats.text=$"소량 ≤35 L 평균 {small}\n대량 >35 L 평균 {large}";
                 resultNote.text=$"마감 후 처리 {r.ClosingCount}대 · 실패 원인은 중복 집계";
-                resultStats.text=$"성공 차량                          {r.SuccessCount} / {r.Records.Count}\n\n퍼펙트 / 원터치                         {r.PerfectCount} / {r.OneTouchCount}\n\n최대 연속 성공                         {r.MaximumStreak}\n\n평균 주유 오차                       {r.AverageError:0.00} L\n\n평균 처리 시간                       {r.AverageTime:0.00} s\n\n과다 주유 / 시간 초과                {r.OverfillCount} / {r.TimeoutCount}";
+                resultStats.text=$"성공 차량                          {r.SuccessCount} / {r.Records.Count}\n퍼펙트 / 원터치                         {r.PerfectCount} / {r.OneTouchCount}\n최대 연속 성공                         {r.MaximumStreak}\n평균 주유 오차                       {r.AverageError:0.00} L\n평균 처리 시간                       {r.AverageTime:0.00} s\n과다 주유 / 시간 초과                {r.OverfillCount} / {r.TimeoutCount}";
                 resultNote.text+=$" · 보너스 +{r.TotalBonus:N0}점";
                 resultExport.text=string.IsNullOrEmpty(session.ExportMessage)?$"최고 기록 {session.BestScore:N0}  ·  {session.BalanceName}"+((session.PracticeModified || session.BalanceName!="STANDARD")?" · 연습 영업":"")+$"\n마감 후 추가 시간 {s.ClosingElapsed:0.00} s":session.ExportMessage;
             }
         }
+
+        static string Money(decimal won) => won.ToString("#,0.###")+"원";
 
         void CelebrateSuccess(FuelingRecord record)
         {

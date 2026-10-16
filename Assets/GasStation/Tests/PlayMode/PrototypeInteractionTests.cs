@@ -87,32 +87,32 @@ namespace GasStation.Tests
         {
             session.enabled=false;
             var ui=Object.FindAnyObjectByType<GameUIController>();
-            Directory.CreateDirectory("Verification/v0.2.5");
+            Directory.CreateDirectory("Verification/v0.2.6");
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/ready.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/ready.png")); yield return null; yield return null;
             session.StartSession(); session.Simulation.ForceVehicle(session.settings.vehicles[0],25);
             session.Simulation.SetHeld(true); session.Simulation.Advance(.8); session.Simulation.SetHeld(false);
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/small-fueling.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/small-fueling.png")); yield return null; yield return null;
             session.ToggleDebug(); ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/debug.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/debug.png")); yield return null; yield return null;
             session.ToggleDebug();
             session.Simulation.SetHeld(true);
             while(session.Simulation.CanAcceptInput && session.Simulation.PredictedFinal<session.Simulation.Request.Target) session.Simulation.Advance(1d/240);
             session.Simulation.SetHeld(false);
             session.Simulation.Advance((session.Simulation.Pressure.Value-session.Simulation.Vehicle.resistance)/session.settings.pressureDecay);
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/flow-stopped.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/flow-stopped.png")); yield return null; yield return null;
             session.StartSession(); session.Simulation.ForceVehicle(session.settings.vehicles[0],25);
             session.Simulation.SetHeld(true); session.Simulation.Advance(2.3);
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/overfill-failure.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/overfill-failure.png")); yield return null; yield return null;
             session.Simulation.End(); session.Simulation.Advance(2); ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/result-loss.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/result-loss.png")); yield return null; yield return null;
             session.StartSession(); session.Simulation.ForceVehicle(session.settings.vehicles[1],10);
             session.Simulation.SetHeld(true); session.Simulation.Advance(2); session.Simulation.End();
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/closing.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/closing.png")); yield return null; yield return null;
             session.ToggleFixedSeed(); session.StartSession();
             while(session.Simulation.State!=SessionState.Result)
             {
@@ -123,8 +123,8 @@ namespace GasStation.Tests
             Assert.That(session.Simulation.Results.SuccessCount,Is.GreaterThan(10));
             Assert.That(session.Simulation.Results.OverfillCount+session.Simulation.Results.TimeoutCount,Is.Zero);
             ui.Refresh(); yield return null;
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/result.png")); yield return null; yield return null;
-            File.WriteAllText("Verification/v0.2.5/session.csv",session.Simulation.Results.ToCsv(session.settings));
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/result.png")); yield return null; yield return null;
+            File.WriteAllText("Verification/v0.2.6/session.csv",session.Simulation.Results.ToCsv(session.settings));
         }
         [UnityTest] public IEnumerator OverfillStopsTheActualPumpAndShowsTheFailureAndLoss()
         {
@@ -223,8 +223,8 @@ namespace GasStation.Tests
                 breakdown |= label.text==$"원터치 +{record.oneTouchBonus}점  ·  퍼펙트 +{record.perfectBonus}점";
             }
             Assert.That(title && breakdown,Is.True); Assert.That(effect.GetComponent<CanvasGroup>().blocksRaycasts,Is.False);
-            Directory.CreateDirectory("Verification/v0.2.5");
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/one-touch-perfect.png")); yield return null; yield return null;
+            Directory.CreateDirectory("Verification/v0.2.6");
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/one-touch-perfect.png")); yield return null; yield return null;
             var sparks=effect.GetComponentInChildren<PrototypeGraphic>(); float progress=sparks.effectProgress;
             session.Simulation.Advance(.1); ui.Refresh(); yield return null;
             Assert.That(sparks.effectProgress,Is.GreaterThan(progress));
@@ -266,8 +266,8 @@ namespace GasStation.Tests
                 bonus |= label.text==$"퍼펙트 +{record.perfectBonus}점";
             }
             Assert.That(title && bonus,Is.True);
-            Directory.CreateDirectory("Verification/v0.2.5");
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/perfect-retry.png")); yield return null; yield return null;
+            Directory.CreateDirectory("Verification/v0.2.6");
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/perfect-retry.png")); yield return null; yield return null;
         }
         [UnityTest] public IEnumerator LastCustomerRemainsPlayableAfterClosingAndThenShowsTheFinalResult()
         {
@@ -285,8 +285,8 @@ namespace GasStation.Tests
                 clock |= text.text=="00:00";
             }
             Assert.That(closing && clock,Is.True); Assert.That(session.Simulation.Results.Records,Is.Empty);
-            Directory.CreateDirectory("Verification/v0.2.5");
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/closing-playable.png")); yield return null; yield return null;
+            Directory.CreateDirectory("Verification/v0.2.6");
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/closing-playable.png")); yield return null; yield return null;
             session.Simulation.SetHeld(false); session.Simulation.Advance((session.Simulation.Pressure.Value-20)/session.settings.pressureDecay);
             Assert.That(session.Simulation.State,Is.EqualTo(SessionState.UnderfillWait));
             var pointer=new PointerEventData(EventSystem.current) {pointerId=10,button=PointerEventData.InputButton.Left};
@@ -303,7 +303,44 @@ namespace GasStation.Tests
             session.Simulation.Advance(1); ui.Refresh(); yield return null;
             Assert.That(session.Simulation.State,Is.EqualTo(SessionState.Result));
             Assert.That(session.Simulation.TransactionId,Is.EqualTo(id)); Assert.That(session.Simulation.Results.Records.Count,Is.EqualTo(1));
-            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.5/closing-success-result.png")); yield return null; yield return null;
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/closing-success-result.png")); yield return null; yield return null;
+        }
+        [UnityTest] public IEnumerator MoneyIsVisibleForTheCustomerAndShiftAndResetsWithANewShift()
+        {
+            session.enabled=false; session.StartSession(); session.Simulation.ForceVehicle(session.settings.vehicles[0],5);
+            var ui=Object.FindAnyObjectByType<GameUIController>();
+            ReleaseAtPredictedAmount(37);
+            Assert.That(session.Simulation.Results.TotalRevenueMilliWon,Is.Zero,"Only a completed customer is settled.");
+            session.Simulation.Advance((session.Simulation.Pressure.Value-20)/session.settings.pressureDecay);
+            ui.Refresh(); yield return null;
+            var record=session.Simulation.LastRecord; var sale=record.sale;
+            Assert.That(sale.AtCostMilliliters,Is.GreaterThan(0)); Assert.That(sale.ProfitWon,Is.EqualTo(17500));
+            bool total=false,receipt=false,price=false;
+            foreach(var label in Object.FindObjectsByType<Text>(FindObjectsInactive.Exclude))
+            {
+                total |= label.text=="누적 이익 17,500원";
+                receipt |= label.text.Contains($"매출 {sale.RevenueWon:#,0.###}원  ·  원가 {sale.CostWon:#,0.###}원  ·  이익 17,500원")
+                    && label.text.Contains("원가 판매 · 추가 이익 0원");
+                price |= label.text=="판매 2,000원/L · 원가 1,500원/L";
+            }
+            Assert.That(total && receipt && price,Is.True,"The visible receipt must match the completed transaction.");
+            Directory.CreateDirectory("Verification/v0.2.6");
+            ScreenCapture.CaptureScreenshot(Path.GetFullPath("Verification/v0.2.6/transaction-sale.png")); yield return null; yield return null;
+            session.Simulation.End(); session.Simulation.Advance(2); ui.Refresh(); yield return null;
+            bool revenue=false,cost=false,profit=false;
+            foreach(var label in Object.FindObjectsByType<Text>(FindObjectsInactive.Exclude))
+            {
+                revenue |= label.text==$"{sale.RevenueWon:#,0.###}원";
+                cost |= label.text==$"{sale.CostWon:#,0.###}원";
+                profit |= label.text=="17,500원";
+            }
+            Assert.That(revenue && cost && profit,Is.True);
+            Assert.That(session.Simulation.Results.TotalScore,Is.EqualTo(record.score));
+            session.StartSession(); ui.Refresh(); yield return null;
+            Assert.That(GameObject.Find("Transaction Sale"),Is.Null);
+            bool reset=false;
+            foreach(var label in Object.FindObjectsByType<Text>(FindObjectsInactive.Exclude)) reset |= label.text=="누적 이익 0원";
+            Assert.That(reset,Is.True);
         }
     }
 }

@@ -24,6 +24,8 @@ MonoBehaviour:
   perfectTolerance: 1
   oneTouchBonusRatio: 0.1
   perfectBonusRatio: 0.15
+  salePricePerLiter: 2000
+  fuelCostPerLiter: 1500
   vehicles:
   - id: compact
     displayName: "\uACBD\uCC28"

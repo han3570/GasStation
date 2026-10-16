@@ -7,6 +7,7 @@ namespace GasStation
     {
         public readonly VehicleSettings Type;
         public readonly int TankCapacity, InitialFuel, Target;
+        public readonly int SalePricePerLiter, FuelCostPerLiter;
         public readonly double TimeLimit, Tolerance;
         public double MinimumFuel => Math.Max(0, Target - Tolerance);
         public double MaximumFuel => Target + Tolerance;
@@ -19,6 +20,8 @@ namespace GasStation
             TankCapacity = type.tankCapacityLiters;
             InitialFuel = initialFuel;
             Target = TankCapacity - InitialFuel;
+            SalePricePerLiter = settings.salePricePerLiter;
+            FuelCostPerLiter = settings.fuelCostPerLiter;
             Tolerance = Math.Min(settings.tolerance, Math.Round(Target * (double)settings.relativeTolerance, 2));
             TimeLimit = Math.Round(Math.Max(type.minimumSeconds, Math.Min(type.maximumSeconds,
                 type.baseSeconds + Target * (double)type.secondsPerLiter)), 1, MidpointRounding.AwayFromZero);

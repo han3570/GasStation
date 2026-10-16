@@ -38,6 +38,9 @@ namespace GasStation
         [Header("Success bonuses")]
         [Range(0, 1)] public float oneTouchBonusRatio = .10f;
         [Range(0, 1)] public float perfectBonusRatio = .15f;
+        [Header("Fuel sales (won per liter)")]
+        [Min(0)] public int salePricePerLiter = 2000;
+        [Min(0)] public int fuelCostPerLiter = 1500;
         [Header("Vehicles")]
         public VehicleSettings[] vehicles =
         {
@@ -54,6 +57,8 @@ namespace GasStation
                 throw new ArgumentException("Invalid transition time or vehicle list.");
             if (oneTouchBonusRatio < 0 || oneTouchBonusRatio > 1 || perfectBonusRatio < 0 || perfectBonusRatio > 1)
                 throw new ArgumentException("Bonus ratios must be between zero and one.");
+            if (salePricePerLiter < 0 || fuelCostPerLiter < 0)
+                throw new ArgumentException("Fuel prices cannot be negative.");
             int totalWeight = 0;
             foreach (var vehicle in vehicles)
             {

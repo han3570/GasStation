@@ -1,4 +1,4 @@
 Status: Passed
-Passed: 71
+Passed: 97
 Failed: 0
 Skipped: 0
