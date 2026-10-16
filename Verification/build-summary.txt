@@ -1,0 +1,5 @@
+Result: Succeeded
+Errors: 0
+Warnings: 0
+Duration: 00:00:05.5092543
+Output: C:/Users/Bong/Gas Station/Builds/Windows/PressureStation.exe

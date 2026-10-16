@@ -1,0 +1,422 @@
+
+{
+  "project": {
+    "name": "Gas Station Pressure Prototype",
+    "version": "0.1.0",
+    "engine": "Unity 2022.3",
+    "platform": "Mobile",
+    "orientation": "Portrait",
+    "referenceResolution": {
+      "width": 1080,
+      "height": 2340
+    },
+    "goal": "압력 조절을 통한 빠르고 정확한 주유가 반복적으로 재미있는지 검증",
+    "prototypeOnly": true
+  },
+  "coreConcept": {
+    "description": "플레이어는 제한된 영업시간 동안 차량에 연료를 주유한다. 버튼을 누르고 있으면 압력이 상승하고, 손을 떼면 자연스럽게 감소한다. 남은 압력으로도 주유가 계속되므로 적절한 시점에 감압을 시작해야 한다.",
+    "primarySkill": "남은 압력과 차량 저항을 고려한 최종 주유량 예측",
+    "secondarySkill": "제한시간 내 주유 속도 최적화",
+    "controls": {
+      "type": "Single Hold Button",
+      "press": "압력 지속 상승",
+      "release": "압력 자연 감소",
+      "pressAgain": "현재 압력에서 다시 상승",
+      "maximumPressure": 100,
+      "pressureOverflowPenalty": false,
+      "emergencyStopButton": false
+    }
+  },
+  "gameSession": {
+    "totalOperatingTimeSeconds": 180,
+    "vehicleSpawnIntervalSeconds": 0.5,
+    "vehicleSpawnMode": "Previous Vehicle Completed",
+    "initialVehicleSpawn": "Immediate",
+    "vehicleSequence": "Weighted Random",
+    "operatingTimerContinuesDuringTransitions": true,
+    "sessionEnd": {
+      "condition": "Operating Time <= 0",
+      "pendingVehicle": "End Without Additional Penalty",
+      "showResultScreen": true
+    }
+  },
+  "pressureSystem": {
+    "minimumPressure": 0,
+    "maximumPressure": 100,
+    "initialPressure": 0,
+    "pressureIncreasePerSecond": 60,
+    "pressureDecreasePerSecond": 28,
+    "increaseCondition": "Button Held",
+    "decreaseCondition": "Button Released",
+    "pressureResetOnNewVehicle": true,
+    "pressureClamp": true,
+    "highPressurePenalty": false,
+    "designNote": "고압 자체에는 불이익이 없다. 과도한 압력으로 목표 주유량을 초과할 때 손해가 발생한다."
+  },
+  "fuelSystem": {
+    "fuelFlowFormula": "max(0, pressure - vehicleResistance) * fuelFlowCoefficient",
+    "fuelFlowCoefficient": 0.20,
+    "vehicleResistanceType": "Fixed Per Vehicle",
+    "fuelContinuesAfterButtonRelease": true,
+    "fuelStopsWhenPressureBelowResistance": true,
+    "fuelAmountStartsAt": 0,
+    "fuelAmountPrecision": 0.01,
+    "simulation": {
+      "updateMethod": "DeltaTime",
+      "fuelAccumulationFormula": "fuelAmount += fuelFlowRate * deltaTime",
+      "frameRateIndependent": true,
+      "updateFuelWhilePressureDecays": true
+    },
+    "importantRules": [
+      "버튼을 누르는 동안에도 연료가 계속 주입된다.",
+      "버튼에서 손을 떼더라도 압력이 차량 저항보다 높으면 주유가 계속된다.",
+      "압력이 차량 저항 이하가 되면 연료 주입이 중단된다.",
+      "주유량이 목표 범위에 들어왔다는 이유만으로 자동 종료하지 않는다.",
+      "주유량이 부족한 상태에서 압력이 떨어졌다면 다시 버튼을 눌러 주유를 재개할 수 있다."
+    ]
+  },
+  "vehicleSystem": {
+    "vehicles": [
+      {
+        "id": "compact",
+        "name": "경차",
+        "targetFuelLiters": 35,
+        "fuelResistance": 20,
+        "timeLimitSeconds": 12,
+        "spawnWeight": 40,
+        "color": "Yellow",
+        "difficulty": 1
+      },
+      {
+        "id": "sedan",
+        "name": "승용차",
+        "targetFuelLiters": 50,
+        "fuelResistance": 35,
+        "timeLimitSeconds": 15,
+        "spawnWeight": 40,
+        "color": "Blue",
+        "difficulty": 2
+      },
+      {
+        "id": "suv",
+        "name": "SUV",
+        "targetFuelLiters": 70,
+        "fuelResistance": 48,
+        "timeLimitSeconds": 20,
+        "spawnWeight": 20,
+        "color": "Red",
+        "difficulty": 3
+      }
+    ],
+    "targetToleranceLiters": 5,
+    "spawnBehavior": {
+      "carMovesIntoPosition": true,
+      "fuelNozzleConnectsAutomatically": true,
+      "fuelingStartsWithPlayerInput": true,
+      "carLeavesAfterResolution": true,
+      "nextCarArrivesAutomatically": true
+    }
+  },
+  "fuelingJudgment": {
+    "targetExample": {
+      "target": 50,
+      "minimumAcceptable": 45,
+      "maximumAcceptable": 55
+    },
+    "success": {
+      "conditions": [
+        "압력 감소로 실제 주유 흐름이 멈췄다.",
+        "최종 주유량이 목표량 ±5L 범위 안에 있다.",
+        "차량 제한시간이 남아 있다."
+      ],
+      "result": "SUCCESS",
+      "vehicleLeaves": true
+    },
+    "underfill": {
+      "condition": "주유가 멈췄으나 최소 허용 주유량에 미달",
+      "result": "CONTINUE",
+      "vehicleLeaves": false,
+      "playerCanResumeFueling": true
+    },
+    "overfill": {
+      "condition": "현재 주유량 > 목표량 + 5L",
+      "result": "FAIL",
+      "resolveImmediately": true,
+      "vehicleLeaves": true,
+      "feedback": "과다 주유!"
+    },
+    "timeout": {
+      "condition": "Vehicle Remaining Time <= 0",
+      "result": "FAIL",
+      "resolveImmediately": true,
+      "vehicleLeaves": true,
+      "feedback": "시간 초과!"
+    },
+    "priority": [
+      "Overfill",
+      "Timeout",
+      "Success",
+      "Continue"
+    ]
+  },
+  "scoringSystem": {
+    "purpose": "경제 시스템 없이도 플레이 숙련도를 수치화",
+    "successBasePoints": 100,
+    "accuracyBonus": {
+      "maximum": 100,
+      "formula": "round(100 * (1 - abs(finalFuel - targetFuel) / 5))",
+      "minimum": 0
+    },
+    "speedBonus": {
+      "formula": "round(remainingVehicleTime * 5)",
+      "minimum": 0
+    },
+    "overfillPenaltyPoints": -80,
+    "timeoutPenaltyPoints": -40,
+    "sessionMetrics": [
+      "TotalScore",
+      "VehiclesCompleted",
+      "SuccessCount",
+      "OverfillCount",
+      "TimeoutCount",
+      "AverageFuelError",
+      "AverageCompletionTime",
+      "PerfectCount",
+      "MaximumSuccessStreak"
+    ],
+    "perfectThresholdLiters": 1
+  },
+  "gameFlow": {
+    "states": [
+      "SESSION_START",
+      "VEHICLE_ARRIVAL",
+      "FUELING",
+      "SUCCESS",
+      "OVERFILL",
+      "TIMEOUT",
+      "NEXT_VEHICLE",
+      "SESSION_RESULT"
+    ],
+    "transitions": [
+      {
+        "from": "SESSION_START",
+        "to": "VEHICLE_ARRIVAL",
+        "trigger": "Start Session"
+      },
+      {
+        "from": "VEHICLE_ARRIVAL",
+        "to": "FUELING",
+        "trigger": "Nozzle Connected"
+      },
+      {
+        "from": "FUELING",
+        "to": "SUCCESS",
+        "trigger": "Fuel Flow Stops Within Target Range"
+      },
+      {
+        "from": "FUELING",
+        "to": "OVERFILL",
+        "trigger": "Fuel Amount Exceeds Maximum"
+      },
+      {
+        "from": "FUELING",
+        "to": "TIMEOUT",
+        "trigger": "Vehicle Timer Expired"
+      },
+      {
+        "from": "SUCCESS",
+        "to": "NEXT_VEHICLE",
+        "trigger": "Result Feedback Finished"
+      },
+      {
+        "from": "OVERFILL",
+        "to": "NEXT_VEHICLE",
+        "trigger": "Result Feedback Finished"
+      },
+      {
+        "from": "TIMEOUT",
+        "to": "NEXT_VEHICLE",
+        "trigger": "Result Feedback Finished"
+      },
+      {
+        "from": "NEXT_VEHICLE",
+        "to": "VEHICLE_ARRIVAL",
+        "trigger": "Operating Time Remaining"
+      }
+    ],
+    "globalTransition": {
+      "to": "SESSION_RESULT",
+      "trigger": "Operating Time Expired"
+    }
+  },
+  "userInterface": {
+    "layout": "Portrait Arcade",
+    "visualStyle": "Simple Casual 2D",
+    "topArea": {
+      "elements": [
+        "Overall Operating Timer",
+        "Processed Vehicle Count",
+        "Total Score"
+      ]
+    },
+    "middleArea": {
+      "elements": [
+        "Vehicle Sprite",
+        "Fuel Nozzle",
+        "Vehicle Type",
+        "Vehicle Resistance",
+        "Target Fuel Amount",
+        "Current Fuel Amount",
+        "Target Range Bar",
+        "Vehicle Remaining Time"
+      ]
+    },
+    "fuelProgressBar": {
+      "showCurrentFuel": true,
+      "showTargetFuel": true,
+      "showAcceptableRange": true,
+      "acceptableRangeColor": "Green",
+      "normalColor": "Blue",
+      "overfillColor": "Red",
+      "animateContinuously": true
+    },
+    "bottomArea": {
+      "pressureGauge": {
+        "type": "Circular",
+        "range": [0, 100],
+        "showCurrentPressure": true,
+        "showVehicleResistanceThreshold": true
+      },
+      "controlButton": {
+        "text": "압력 상승",
+        "interaction": "Press And Hold",
+        "position": "Bottom Center",
+        "size": "Large",
+        "pressedFeedback": "Scale And Glow",
+        "releasedFeedback": "Return To Normal"
+      }
+    },
+    "resultFeedback": {
+      "success": "SUCCESS!",
+      "perfect": "PERFECT!",
+      "overfill": "OVERFILL!",
+      "timeout": "TIME UP!",
+      "feedbackDurationSeconds": 0.4
+    }
+  },
+  "feedbackSystem": {
+    "pressureIncrease": {
+      "gaugeAnimation": true,
+      "fuelPumpSoundPitchChanges": true
+    },
+    "pressureDecrease": {
+      "gaugeAnimation": true,
+      "soundGraduallySoftens": true
+    },
+    "success": {
+      "screenFlash": "Green",
+      "showScoreGain": true
+    },
+    "overfill": {
+      "screenFlash": "Red",
+      "showScorePenalty": true
+    },
+    "timeout": {
+      "screenFlash": "Orange",
+      "showScorePenalty": true
+    },
+    "implementationNote": "사운드와 시각효과는 임시 리소스를 사용하며 핵심 판정 로직보다 우선하지 않는다."
+  },
+  "debugTools": {
+    "enabledInDevelopment": true,
+    "showCurrentPressure": true,
+    "showFuelFlowRate": true,
+    "showVehicleResistance": true,
+    "showEstimatedRemainingFuelAfterRelease": true,
+    "remainingFuelEstimateFormula": "0.20 * pow(max(0, pressure - resistance), 2) / (2 * 28)",
+    "hidePredictedFuelFromNormalPlayer": true,
+    "allowRestartSession": true,
+    "allowForceVehicleSpawn": true,
+    "allowAdjustPressureRates": true,
+    "allowAdjustFuelFlowCoefficient": true
+  },
+  "testPlan": {
+    "mainQuestion": "압력 조절만으로 여러 차량을 연속 주유하는 것이 반복적으로 재미있는가?",
+    "testDurationMinutes": 15,
+    "recommendedSessions": 5,
+    "thingsToObserve": [
+      "플레이어가 점차 감압 시점을 정확하게 예측하는가?",
+      "반복할수록 차량당 주유 시간이 감소하는가?",
+      "차량 저항 차이에 따라 실제 조작 방식이 달라지는가?",
+      "버튼을 놓은 이후 기다리는 시간이 지나치게 긴가?",
+      "과다 주유 실패가 억울함보다 재도전 욕구를 만드는가?",
+      "최고 기록을 갱신하고 싶어서 자발적으로 다시 플레이하는가?"
+    ],
+    "balanceVariants": [
+      {
+        "name": "STANDARD",
+        "pressureRise": 60,
+        "pressureDecay": 28
+      },
+      {
+        "name": "FAST_DECAY",
+        "pressureRise": 60,
+        "pressureDecay": 40
+      },
+      {
+        "name": "SLOW_DECAY",
+        "pressureRise": 60,
+        "pressureDecay": 18
+      }
+    ],
+    "successIndicators": {
+      "learning": "반복 플레이에서 성공률 또는 처리 속도가 개선됨",
+      "engagement": "게임 종료 후 자발적인 재도전이 발생함",
+      "skillExpression": "숙련자와 초보자의 성과에 의미 있는 차이가 발생함",
+      "vehicleVariety": "차량별 감압 시점과 압력 유지 패턴이 달라짐"
+    }
+  },
+  "excludedFeatures": [
+    "Fuel Purchasing",
+    "Fuel Inventory Management",
+    "Dynamic Fuel Prices",
+    "Player Defined Sale Price",
+    "Loans And Interest",
+    "Equipment Upgrades",
+    "Random Economic Events",
+    "Pressure Overflow Penalty",
+    "Multiple Fuel Pumps",
+    "Additional Action Buttons",
+    "Complex Vehicle Animations"
+  ],
+  "implementationRequirements": {
+    "architecture": "Component Based",
+    "suggestedScripts": [
+      "GameSessionManager.cs",
+      "VehicleController.cs",
+      "PressureController.cs",
+      "FuelingController.cs",
+      "FuelingResultEvaluator.cs",
+      "VehicleSpawner.cs",
+      "GameUIController.cs",
+      "GameResultTracker.cs"
+    ],
+    "vehicleSettings": "ScriptableObject Or Serializable Data",
+    "balanceSettings": "Editable Inspector Variables",
+    "mobileInput": "Pointer Down And Pointer Up",
+    "desktopTestInput": "Mouse Hold Or Space Key",
+    "pauseBehavior": "Release Input And Pause Simulation",
+    "inputSafety": "Release Hold State On Focus Loss",
+    "requiredResult": "A Fully Playable Single Scene Prototype",
+    "developmentPriority": [
+      "Pressure Simulation",
+      "Fuel Flow Simulation",
+      "Success And Failure Judgment",
+      "Vehicle Timer",
+      "Repeated Vehicle Spawning",
+      "Gameplay HUD",
+      "Results And Test Metrics",
+      "Basic Visual Feedback"
+    ]
+  }
+}

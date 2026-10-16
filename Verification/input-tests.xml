@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="13" result="Passed" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.708995">
+  <test-suite type="TestSuite" id="1021" name="Pressure Station" fullname="Pressure Station" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.708995" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1036" name="GasStation.PlayModeTests.dll" fullname="C:/Users/Bong/Gas Station/Library/ScriptAssemblies/GasStation.PlayModeTests.dll" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.698245" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="48336" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1037" name="GasStation" fullname="GasStation" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.691137" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1038" name="Tests" fullname="GasStation.Tests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.686180" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1022" name="PrototypeInteractionTests" fullname="GasStation.Tests.PrototypeInteractionTests" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" testcasecount="13" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:04Z" duration="4.681040" total="13" passed="13" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1033" name="CelebrationFreezesWithPauseAndClearsOnRestart" fullname="GasStation.Tests.PrototypeInteractionTests.CelebrationFreezesWithPauseAndClearsOnRestart" methodname="CelebrationFreezesWithPauseAndClearsOnRestart" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1326547387" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:05:59Z" duration="0.332001" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1026" name="FixedSeedRestartsReproduceArrivalsAndRemainPracticeSessions" fullname="GasStation.Tests.PrototypeInteractionTests.FixedSeedRestartsReproduceArrivalsAndRemainPracticeSessions" methodname="FixedSeedRestartsReproduceArrivalsAndRemainPracticeSessions" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="934452570" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:05:59Z" duration="0.135192" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="FlowStopShowsFinalResultAndDisablesThePumpImmediately" fullname="GasStation.Tests.PrototypeInteractionTests.FlowStopShowsFinalResultAndDisablesThePumpImmediately" methodname="FlowStopShowsFinalResultAndDisablesThePumpImmediately" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1627981393" result="Passed" start-time="2026-10-16 16:05:59Z" end-time="2026-10-16 16:06:00Z" duration="0.135992" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1035" name="LastCustomerRemainsPlayableAfterClosingAndThenShowsTheFinalResult" fullname="GasStation.Tests.PrototypeInteractionTests.LastCustomerRemainsPlayableAfterClosingAndThenShowsTheFinalResult" methodname="LastCustomerRemainsPlayableAfterClosingAndThenShowsTheFinalResult" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1249546460" result="Passed" start-time="2026-10-16 16:06:00Z" end-time="2026-10-16 16:06:00Z" duration="0.297978" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1031" name="LossRemainsVisibleAfterTheNextArrivalAndOnTheFinalScreen" fullname="GasStation.Tests.PrototypeInteractionTests.LossRemainsVisibleAfterTheNextArrivalAndOnTheFinalScreen" methodname="LossRemainsVisibleAfterTheNextArrivalAndOnTheFinalScreen" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1316851333" result="Passed" start-time="2026-10-16 16:06:00Z" end-time="2026-10-16 16:06:00Z" duration="0.178963" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="OneTouchPerfectEffectWaitsForFinalSuccessAndNeverBlocksTheNextCar" fullname="GasStation.Tests.PrototypeInteractionTests.OneTouchPerfectEffectWaitsForFinalSuccessAndNeverBlocksTheNextCar" methodname="OneTouchPerfectEffectWaitsForFinalSuccessAndNeverBlocksTheNextCar" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="136196921" result="Passed" start-time="2026-10-16 16:06:00Z" end-time="2026-10-16 16:06:00Z" duration="0.285399" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1028" name="OverfillStopsTheActualPumpAndShowsTheFailureAndLoss" fullname="GasStation.Tests.PrototypeInteractionTests.OverfillStopsTheActualPumpAndShowsTheFailureAndLoss" methodname="OverfillStopsTheActualPumpAndShowsTheFailureAndLoss" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="84128905" result="Passed" start-time="2026-10-16 16:06:00Z" end-time="2026-10-16 16:06:00Z" duration="0.138797" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1024" name="PauseAndPointerExitReleaseHeldInput" fullname="GasStation.Tests.PrototypeInteractionTests.PauseAndPointerExitReleaseHeldInput" methodname="PauseAndPointerExitReleaseHeldInput" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="468183948" result="Passed" start-time="2026-10-16 16:06:00Z" end-time="2026-10-16 16:06:01Z" duration="0.448242" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1025" name="RandomFuelUiAndDebugOverridesUseTheSameLockedRequest" fullname="GasStation.Tests.PrototypeInteractionTests.RandomFuelUiAndDebugOverridesUseTheSameLockedRequest" methodname="RandomFuelUiAndDebugOverridesUseTheSameLockedRequest" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1037327188" result="Passed" start-time="2026-10-16 16:06:01Z" end-time="2026-10-16 16:06:01Z" duration="0.149352" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1034" name="RetriedPerfectSuccessShowsOnlyItsAccuracyBonus" fullname="GasStation.Tests.PrototypeInteractionTests.RetriedPerfectSuccessShowsOnlyItsAccuracyBonus" methodname="RetriedPerfectSuccessShowsOnlyItsAccuracyBonus" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1068102901" result="Passed" start-time="2026-10-16 16:06:01Z" end-time="2026-10-16 16:06:01Z" duration="0.195630" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="StartAndHoldButtonOperateThroughTheUi" fullname="GasStation.Tests.PrototypeInteractionTests.StartAndHoldButtonOperateThroughTheUi" methodname="StartAndHoldButtonOperateThroughTheUi" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="1093243713" result="Passed" start-time="2026-10-16 16:06:01Z" end-time="2026-10-16 16:06:03Z" duration="1.475189" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1030" name="UnderfillWaitAllowsAnotherPointerPressOnTheSameCustomer" fullname="GasStation.Tests.PrototypeInteractionTests.UnderfillWaitAllowsAnotherPointerPressOnTheSameCustomer" methodname="UnderfillWaitAllowsAnotherPointerPressOnTheSameCustomer" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="841556816" result="Passed" start-time="2026-10-16 16:06:03Z" end-time="2026-10-16 16:06:03Z" duration="0.162028" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1027" name="UpdatedScreensRenderThroughAnEntireShift" fullname="GasStation.Tests.PrototypeInteractionTests.UpdatedScreensRenderThroughAnEntireShift" methodname="UpdatedScreensRenderThroughAnEntireShift" classname="GasStation.Tests.PrototypeInteractionTests" runstate="Runnable" seed="52664223" result="Passed" start-time="2026-10-16 16:06:03Z" end-time="2026-10-16 16:06:04Z" duration="0.727885" asserts="0">
+              <properties>
+                <property name="_JOINTYPE" value="UnityCombinatorial" />
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Error reason is 'NoSubscription' and no additional error information was provided (https://generators.ai.unity.com).
+Saving results to: C:/Users/Bong/AppData/LocalLow/Pressure Lab/Pressure Station\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

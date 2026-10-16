@@ -1,0 +1,27 @@
+Pressure Station v0.2.1 — B decay prototype — 2026-10-12
+
+Scope: apply the v0.3 pressure-depletion ending rules to existing v0.2 gameplay.
+Keep three vehicles, fuel generation, dynamic deadlines, tolerance, scoring and transitions.
+No economy, inventory, reputation, new vehicles, APK or Windows build in this step.
+
+Final verification:
+- EditMode: 43 passed, 0 failed, 0 skipped.
+- PlayMode: 8 passed, 0 failed, 0 skipped.
+- All 369 combinations of remaining fuel and decay speed can still achieve perfect.
+- Overfill boundary and residual fuel agree at 30, 60 and 120 FPS.
+- Normal zero-flow tail waits until actual pressure reaches 0.
+- Underfill permits another press on the same customer.
+- Overfill/timeout lock input and preserve fuel delivered during forced decay.
+- Timeout remains latched even when residual fuel reaches the acceptable range.
+- Customer timer continues during decay, but freezes when operating time ends.
+- Simultaneous timeout/operating expiry retain both causes.
+- Customer and session finalize once; duplicate transaction IDs do not alter metrics.
+- CSV elapsed time includes all active customer decay, and stores no-flow wait and closing time.
+- B decay best scores are stored separately from old v0.2 records.
+
+Captured UI: ready, small-fueling, debug, zero-flow-wait, forced-decay, closing, result.
+Fixed seed 12345 full shift: 28 successful vehicles, 1 final closing record, no failed
+vehicles or duplicate transaction IDs. Closing adds approximately 3.5714 seconds.
+Inspect session.csv for the final per-customer records.
+
+Human playtesting is needed to assess whether the added decay wait feels satisfying.

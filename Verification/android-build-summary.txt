@@ -1,0 +1,5 @@
+Result: Succeeded
+Errors: 0
+Warnings: 1
+Duration: 00:03:17.3484077
+Output: C:/Users/Bong/Gas Station/Builds/Android/PressureStation.apk

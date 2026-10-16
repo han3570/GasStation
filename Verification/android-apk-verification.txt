@@ -1,0 +1,14 @@
+APK: Builds/Android/PressureStation.apk
+Build result: Succeeded
+Build errors: 0
+Build warnings: 1 (Diagnostics Data requires debug symbols for crash report stack traces)
+Size: 84531988 bytes
+Package: com.pressurelab.pressurestation
+Version: 0.1.0 (versionCode 1)
+Minimum Android API: 26 (Android 8.0)
+Target Android API: 36
+Architectures: arm64-v8a, armeabi-v7a
+APK signature verification: Passed (v2, one signer)
+ZIP alignment verification: Passed (zipalign -c -P 16 4)
+SHA256: 660811FFB0018B251697D6CEC10832529A9F81174A1011D307C456DE79734CF3
+Physical Android device execution: Not tested

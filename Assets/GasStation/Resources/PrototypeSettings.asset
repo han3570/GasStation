@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86f6fb25ebd3599418bf4897e402de01, type: 3}
+  m_Name: PrototypeSettings
+  m_EditorClassIdentifier: GasStation.Runtime::GasStation.PrototypeSettings
+  operatingSeconds: 180
+  arrivalSeconds: 0.5
+  feedbackSeconds: 0.4
+  overfillFeedbackSeconds: 1.2
+  pressureRise: 60
+  pressureDecay: 28
+  flowCoefficient: 0.2
+  tolerance: 5
+  relativeTolerance: 0.2
+  perfectTolerance: 1
+  oneTouchBonusRatio: 0.1
+  perfectBonusRatio: 0.15
+  vehicles:
+  - id: compact
+    displayName: "\uACBD\uCC28"
+    tankCapacityLiters: 40
+    minRemainingFuel: 5
+    maxRemainingFuel: 25
+    baseSeconds: 8
+    secondsPerLiter: 0.17
+    minimumSeconds: 11
+    maximumSeconds: 15
+    resistance: 20
+    weight: 40
+    color: {r: 1, g: 0.73, b: 0.25, a: 1}
+  - id: sedan
+    displayName: "\uC2B9\uC6A9\uCC28"
+    tankCapacityLiters: 60
+    minRemainingFuel: 5
+    maxRemainingFuel: 45
+    baseSeconds: 10
+    secondsPerLiter: 0.15
+    minimumSeconds: 12
+    maximumSeconds: 19
+    resistance: 35
+    weight: 40
+    color: {r: 0.37, g: 0.69, b: 0.91, a: 1}
+  - id: suv
+    displayName: SUV
+    tankCapacityLiters: 85
+    minRemainingFuel: 5
+    maxRemainingFuel: 65
+    baseSeconds: 11
+    secondsPerLiter: 0.13
+    minimumSeconds: 13
+    maximumSeconds: 22
+    resistance: 48
+    weight: 20
+    color: {r: 0.93, g: 0.43, b: 0.34, a: 1}

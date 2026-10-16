@@ -1,0 +1,3 @@
+Standalone reached Ready, Fueling and Result.
+Score: 6055
+Successes: 25

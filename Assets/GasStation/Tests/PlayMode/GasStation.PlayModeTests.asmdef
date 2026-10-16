@@ -1,0 +1,6 @@
+{
+  "name": "GasStation.PlayModeTests",
+  "references": ["GasStation.Runtime", "Unity.ugui"],
+  "optionalUnityReferences": ["TestAssemblies"],
+  "autoReferenced": false
+}

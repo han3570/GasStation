@@ -1,0 +1,7 @@
+{
+  "name": "GasStation.Editor",
+  "rootNamespace": "GasStation.Editor",
+  "references": ["GasStation.Runtime", "UnityEditor.TestRunner", "UnityEngine.TestRunner"],
+  "includePlatforms": ["Editor"],
+  "autoReferenced": true
+}

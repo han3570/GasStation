@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="43" result="Passed" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.3210534">
+  <test-suite type="TestSuite" id="1000" name="Pressure Station" fullname="Pressure Station" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.321053" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1050" name="GasStation.Tests.dll" fullname="C:/Users/Bong/Gas Station/Library/ScriptAssemblies/GasStation.Tests.dll" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.306377" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="33636" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1051" name="GasStation" fullname="GasStation" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.304753" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1052" name="Tests" fullname="GasStation.Tests" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.303529" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1002" name="FuelingSimulationTests" fullname="GasStation.Tests.FuelingSimulationTests" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" testcasecount="43" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.302245" total="43" passed="43" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-suite type="ParameterizedMethod" id="1028" name="ArrivalCalculatesTargetRangeAndRoundedDeadline" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalCalculatesTargetRangeAndRoundedDeadline" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.014679" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1024" name="ArrivalCalculatesTargetRangeAndRoundedDeadline(1,10,50,45,55,17.5d)" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalCalculatesTargetRangeAndRoundedDeadline(1,10,50,45,55,17.5d)" methodname="ArrivalCalculatesTargetRangeAndRoundedDeadline" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="984453927" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.008431" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1025" name="ArrivalCalculatesTargetRangeAndRoundedDeadline(1,30,30,25,35,14.5d)" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalCalculatesTargetRangeAndRoundedDeadline(1,30,30,25,35,14.5d)" methodname="ArrivalCalculatesTargetRangeAndRoundedDeadline" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="2044657747" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000207" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1026" name="ArrivalCalculatesTargetRangeAndRoundedDeadline(0,25,15,12,18,11)" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalCalculatesTargetRangeAndRoundedDeadline(0,25,15,12,18,11)" methodname="ArrivalCalculatesTargetRangeAndRoundedDeadline" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1347520285" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000129" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="ArrivalCalculatesTargetRangeAndRoundedDeadline(2,65,20,16,24,13.6d)" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalCalculatesTargetRangeAndRoundedDeadline(2,65,20,16,24,13.6d)" methodname="ArrivalCalculatesTargetRangeAndRoundedDeadline" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1022218897" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000178" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1030" name="ArrivalLocksTargetAndDeadlineAndResetsFuelOnReplacement" fullname="GasStation.Tests.FuelingSimulationTests.ArrivalLocksTargetAndDeadlineAndResetsFuelOnReplacement" methodname="ArrivalLocksTargetAndDeadlineAndResetsFuelOnReplacement" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="756140429" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.004511" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1015" name="ClosingAtZeroPressureRecordsPendingVehicleWithoutScorePenalty" fullname="GasStation.Tests.FuelingSimulationTests.ClosingAtZeroPressureRecordsPendingVehicleWithoutScorePenalty" methodname="ClosingAtZeroPressureRecordsPendingVehicleWithoutScorePenalty" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1253247636" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.002202" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1049" name="ClosingDuringTransitionDoesNotCreateAnExtraCustomer" fullname="GasStation.Tests.FuelingSimulationTests.ClosingDuringTransitionDoesNotCreateAnExtraCustomer" methodname="ClosingDuringTransitionDoesNotCreateAnExtraCustomer" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1514742295" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000303" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1041" name="ClosingFinishesResidualFuelFreezesTheCustomerClockAndResolvesOnce" fullname="GasStation.Tests.FuelingSimulationTests.ClosingFinishesResidualFuelFreezesTheCustomerClockAndResolvesOnce" methodname="ClosingFinishesResidualFuelFreezesTheCustomerClockAndResolvesOnce" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="324701758" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000913" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1033" name="CsvAndVolumeMetricsPreserveArrivalDataAndElapsedTime" fullname="GasStation.Tests.FuelingSimulationTests.CsvAndVolumeMetricsPreserveArrivalDataAndElapsedTime" methodname="CsvAndVolumeMetricsPreserveArrivalDataAndElapsedTime" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="2046084468" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.001299" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1039" name="CustomerClockContinuesDuringTheZeroFlowTail" fullname="GasStation.Tests.FuelingSimulationTests.CustomerClockContinuesDuringTheZeroFlowTail" methodname="CustomerClockContinuesDuringTheZeroFlowTail" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1212161069" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000983" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1035" name="DynamicDeadlineClampsAtBothEnds" fullname="GasStation.Tests.FuelingSimulationTests.DynamicDeadlineClampsAtBothEnds" methodname="DynamicDeadlineClampsAtBothEnds" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1190180828" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000161" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1022" name="EveryVehicleCanAchievePerfectWithAllDecayVariants" fullname="GasStation.Tests.FuelingSimulationTests.EveryVehicleCanAchievePerfectWithAllDecayVariants" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.192994" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1019" name="EveryVehicleCanAchievePerfectWithAllDecayVariants(18)" fullname="GasStation.Tests.FuelingSimulationTests.EveryVehicleCanAchievePerfectWithAllDecayVariants(18)" methodname="EveryVehicleCanAchievePerfectWithAllDecayVariants" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1718021142" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.072834" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1020" name="EveryVehicleCanAchievePerfectWithAllDecayVariants(28)" fullname="GasStation.Tests.FuelingSimulationTests.EveryVehicleCanAchievePerfectWithAllDecayVariants(28)" methodname="EveryVehicleCanAchievePerfectWithAllDecayVariants" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1190354647" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.060815" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1021" name="EveryVehicleCanAchievePerfectWithAllDecayVariants(40)" fullname="GasStation.Tests.FuelingSimulationTests.EveryVehicleCanAchievePerfectWithAllDecayVariants(40)" methodname="EveryVehicleCanAchievePerfectWithAllDecayVariants" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="373321713" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.054976" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1016" name="FinalPriorityIsTimeoutThenOverfillThenOperatingEndThenSuccess" fullname="GasStation.Tests.FuelingSimulationTests.FinalPriorityIsTimeoutThenOverfillThenOperatingEndThenSuccess" methodname="FinalPriorityIsTimeoutThenOverfillThenOperatingEndThenSuccess" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="2047405628" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000389" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1008" name="IntegrationHasNoFrameRateDrift" fullname="GasStation.Tests.FuelingSimulationTests.IntegrationHasNoFrameRateDrift" methodname="IntegrationHasNoFrameRateDrift" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="298673834" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000341" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1034" name="InvalidRemainingFuelAndTimeSettingsAreRejected" fullname="GasStation.Tests.FuelingSimulationTests.InvalidRemainingFuelAndTimeSettingsAreRejected" methodname="InvalidRemainingFuelAndTimeSettingsAreRejected" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="839500667" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.001123" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1037" name="NormalDecayCanBeInterruptedUntilAnEndingIsLatched" fullname="GasStation.Tests.FuelingSimulationTests.NormalDecayCanBeInterruptedUntilAnEndingIsLatched" methodname="NormalDecayCanBeInterruptedUntilAnEndingIsLatched" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1625450432" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000400" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1047" name="OverfillCrossingAndFinalFuelAreFrameRateIndependent" fullname="GasStation.Tests.FuelingSimulationTests.OverfillCrossingAndFinalFuelAreFrameRateIndependent" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.004792" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1044" name="OverfillCrossingAndFinalFuelAreFrameRateIndependent(30)" fullname="GasStation.Tests.FuelingSimulationTests.OverfillCrossingAndFinalFuelAreFrameRateIndependent(30)" methodname="OverfillCrossingAndFinalFuelAreFrameRateIndependent" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1574937905" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.001993" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1045" name="OverfillCrossingAndFinalFuelAreFrameRateIndependent(60)" fullname="GasStation.Tests.FuelingSimulationTests.OverfillCrossingAndFinalFuelAreFrameRateIndependent(60)" methodname="OverfillCrossingAndFinalFuelAreFrameRateIndependent" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="290751118" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000618" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1046" name="OverfillCrossingAndFinalFuelAreFrameRateIndependent(120)" fullname="GasStation.Tests.FuelingSimulationTests.OverfillCrossingAndFinalFuelAreFrameRateIndependent(120)" methodname="OverfillCrossingAndFinalFuelAreFrameRateIndependent" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="848882247" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000491" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1012" name="OverfillLocksInputAndRecordsResidualFuelBeforePenalty" fullname="GasStation.Tests.FuelingSimulationTests.OverfillLocksInputAndRecordsResidualFuelBeforePenalty" methodname="OverfillLocksInputAndRecordsResidualFuelBeforePenalty" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="2032471588" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000684" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1014" name="PauseFreezesAllTimersAndReleasesInput" fullname="GasStation.Tests.FuelingSimulationTests.PauseFreezesAllTimersAndReleasesInput" methodname="PauseFreezesAllTimersAndReleasesInput" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1287101994" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000248" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1043" name="PauseFreezesForcedDecayAndResumeCannotReenableTheButton" fullname="GasStation.Tests.FuelingSimulationTests.PauseFreezesForcedDecayAndResumeCannotReenableTheButton" methodname="PauseFreezesForcedDecayAndResumeCannotReenableTheButton" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1353183702" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000635" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="PressureClampAndResistanceCrossingAreIntegratedExactly" fullname="GasStation.Tests.FuelingSimulationTests.PressureClampAndResistanceCrossingAreIntegratedExactly" methodname="PressureClampAndResistanceCrossingAreIntegratedExactly" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="420680143" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000154" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1007" name="ReleasedFuelMatchesPrediction" fullname="GasStation.Tests.FuelingSimulationTests.ReleasedFuelMatchesPrediction" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.001210" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1004" name="ReleasedFuelMatchesPrediction(18)" fullname="GasStation.Tests.FuelingSimulationTests.ReleasedFuelMatchesPrediction(18)" methodname="ReleasedFuelMatchesPrediction" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1300237792" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000286" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1005" name="ReleasedFuelMatchesPrediction(28)" fullname="GasStation.Tests.FuelingSimulationTests.ReleasedFuelMatchesPrediction(28)" methodname="ReleasedFuelMatchesPrediction" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="826681751" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000072" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1006" name="ReleasedFuelMatchesPrediction(40)" fullname="GasStation.Tests.FuelingSimulationTests.ReleasedFuelMatchesPrediction(40)" methodname="ReleasedFuelMatchesPrediction" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1564679054" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000054" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1017" name="ScoringAndMetricsTrackSuccessfulAndFailedVehicles" fullname="GasStation.Tests.FuelingSimulationTests.ScoringAndMetricsTrackSuccessfulAndFailedVehicles" methodname="ScoringAndMetricsTrackSuccessfulAndFailedVehicles" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1771784542" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000398" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1029" name="SeededArrivalSequenceRepeatsAndCoversInclusiveRemainingFuelRanges" fullname="GasStation.Tests.FuelingSimulationTests.SeededArrivalSequenceRepeatsAndCoversInclusiveRemainingFuelRanges" methodname="SeededArrivalSequenceRepeatsAndCoversInclusiveRemainingFuelRanges" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="220923636" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.038175" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1018" name="SeededWeightedSpawnerRespectsConfiguredDistribution" fullname="GasStation.Tests.FuelingSimulationTests.SeededWeightedSpawnerRespectsConfiguredDistribution" methodname="SeededWeightedSpawnerRespectsConfiguredDistribution" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1272838480" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000707" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1042" name="SimultaneousOperatingAndCustomerExpiryRecordsBothCauses" fullname="GasStation.Tests.FuelingSimulationTests.SimultaneousOperatingAndCustomerExpiryRecordsBothCauses" methodname="SimultaneousOperatingAndCustomerExpiryRecordsBothCauses" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="738311564" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000598" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1040" name="SimultaneousZeroPressureAndCustomerExpiryIsTimeout" fullname="GasStation.Tests.FuelingSimulationTests.SimultaneousZeroPressureAndCustomerExpiryIsTimeout" methodname="SimultaneousZeroPressureAndCustomerExpiryIsTimeout" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1709083419" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000436" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1031" name="SmallTargetBoundariesPermitResumeAndDeferFinalOverfillUntilDepleted" fullname="GasStation.Tests.FuelingSimulationTests.SmallTargetBoundariesPermitResumeAndDeferFinalOverfillUntilDepleted" methodname="SmallTargetBoundariesPermitResumeAndDeferFinalOverfillUntilDepleted" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="170982319" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000637" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="SpeedScoreUsesDeadlineRatioAndRewardsVolumeWithoutExceedingBonusCap" fullname="GasStation.Tests.FuelingSimulationTests.SpeedScoreUsesDeadlineRatioAndRewardsVolumeWithoutExceedingBonusCap" methodname="SpeedScoreUsesDeadlineRatioAndRewardsVolumeWithoutExceedingBonusCap" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="561532976" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000181" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1011" name="SuccessfulReleaseWaitsForPressureToReachZero" fullname="GasStation.Tests.FuelingSimulationTests.SuccessfulReleaseWaitsForPressureToReachZero" methodname="SuccessfulReleaseWaitsForPressureToReachZero" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1791597143" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000584" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1010" name="TargetRangeDoesNotAutoCompleteWhileFlowing" fullname="GasStation.Tests.FuelingSimulationTests.TargetRangeDoesNotAutoCompleteWhileFlowing" methodname="TargetRangeDoesNotAutoCompleteWhileFlowing" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1801169127" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000327" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1013" name="TimeoutResolvesAndTransitionConsumesOperatingTime" fullname="GasStation.Tests.FuelingSimulationTests.TimeoutResolvesAndTransitionConsumesOperatingTime" methodname="TimeoutResolvesAndTransitionConsumesOperatingTime" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="1752825136" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.001099" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1038" name="TimeoutStaysLatchedWhenResidualFuelReachesTheTarget" fullname="GasStation.Tests.FuelingSimulationTests.TimeoutStaysLatchedWhenResidualFuelReachesTheTarget" methodname="TimeoutStaysLatchedWhenResidualFuelReachesTheTarget" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="125718666" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000806" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1048" name="TransactionIdentifierPreventsDuplicateScoreAndMetricChanges" fullname="GasStation.Tests.FuelingSimulationTests.TransactionIdentifierPreventsDuplicateScoreAndMetricChanges" methodname="TransactionIdentifierPreventsDuplicateScoreAndMetricChanges" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="447411949" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000540" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1009" name="UnderfillCanResumeAndDoesNotResolveAtZeroPressure" fullname="GasStation.Tests.FuelingSimulationTests.UnderfillCanResumeAndDoesNotResolveAtZeroPressure" methodname="UnderfillCanResumeAndDoesNotResolveAtZeroPressure" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="294406788" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000438" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="WholeSessionCanFinishWithAllMetrics" fullname="GasStation.Tests.FuelingSimulationTests.WholeSessionCanFinishWithAllMetrics" methodname="WholeSessionCanFinishWithAllMetrics" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="2073826125" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.011960" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1036" name="ZeroFlowStillWaitsForPressureAndCountsTheIdleTail" fullname="GasStation.Tests.FuelingSimulationTests.ZeroFlowStillWaitsForPressureAndCountsTheIdleTail" methodname="ZeroFlowStillWaitsForPressureAndCountsTheIdleTail" classname="GasStation.Tests.FuelingSimulationTests" runstate="Runnable" seed="932179462" result="Passed" start-time="2026-10-12 09:21:40Z" end-time="2026-10-12 09:21:40Z" duration="0.000790" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Bong/AppData/LocalLow/Pressure Lab/Pressure Station\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

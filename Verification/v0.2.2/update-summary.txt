@@ -1,0 +1,26 @@
+Pressure Station v0.2.2 — flow-stop finalization — 2026-10-12
+
+Requested change: finalize when released pressure reaches vehicle resistance and flow stops.
+No additional wait for pressure 0. Resistance equality is included because flow is already 0.
+Keep underfill resume, forced input lock, residual fuel, frozen closing customer clock,
+one-time resolution, three vehicles and the v0.2 balance values.
+No APK or Windows build performed.
+
+Verification:
+- EditMode: 46 passed, 0 failed, 0 skipped.
+- PlayMode: 8 passed, 0 failed, 0 skipped.
+- 369 remaining-fuel/decay combinations can achieve perfect.
+- Overfill final volume and resolution time agree at 30/60/120 FPS.
+- Success resolves at resistance with no mandatory zero-flow tail.
+- Underfill resumes from remaining pressure without replacing the customer.
+- Holding below resistance does not prematurely finish an unfilled customer.
+- Closing below resistance resolves immediately without resetting pressure.
+- Timeout and flow-stop simultaneous boundary remains timeout.
+- Overfill/timeout residual fueling and one-time resolution remain intact.
+- UI feedback and disabled input appear immediately at flow stop.
+
+Fixed seed 12345: 32 successful customers and 1 closing record, no overfill or timeout.
+All successful records have 0 seconds of flow-stopped wait.
+This shift's closing extension is approximately 1.8571 seconds.
+Screens and complete transaction records are stored beside this summary.
+The former pressure-0 version remains archived in Verification/v0.2.1/.

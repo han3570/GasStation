@@ -1,0 +1,6 @@
+{
+  "name": "GasStation.Runtime",
+  "rootNamespace": "GasStation",
+  "references": ["Unity.InputSystem", "Unity.ugui"],
+  "autoReferenced": true
+}

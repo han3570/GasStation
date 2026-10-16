@@ -1,0 +1,24 @@
+Pressure Station v0.2.0 — 2026-10-11
+
+Scope: Unity project update only. No APK or Windows build requested or performed.
+Existing Builds/ artifacts still contain v0.1.
+
+EditMode: 30 passed, 0 failed, 0 skipped.
+PlayMode: 5 passed, 0 failed, 0 skipped.
+Reachability: all 123 initial-fuel values across 3 vehicle types, at decay 18/28/40,
+369 combinations total; all resolved successfully with error below 1 L.
+Whole 180-second shift completed in both simulation and actual UI tests.
+CSV stores arrival capacity, initial fuel, target, tolerance, deadline, elapsed time,
+final dispensed fuel, total tank fuel, volume group, score and seed.
+Visual inspection: ready.png, small-fueling.png, debug.png, result.png.
+
+Balance changes:
+- Tolerance = min(5 L, target * 0.20); 15 L target accepts 12–18 L.
+- Success = round((100 + accuracy + speed) * target / 35).
+- Accuracy = max(0, 100 * (1 - absolute_error / tolerance)).
+- Speed = 50 * clamp(remaining_time / arrival_deadline, 0, 1).
+- Overfill -80, timeout -40; operating duration 180 seconds.
+- Targets and deadlines are locked on arrival; progress shows fuel dispensed this visit.
+- v0.2 best-score storage is separate from v0.1.
+
+Human playtesting is still needed to assess perceived difficulty and enjoyment.

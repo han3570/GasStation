@@ -1,0 +1,50 @@
+# Unity-generated data and local editor preferences
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Bb]uild/
+/[Bb]uilds/
+/.utmp/
+/MemoryCaptures/
+/Recordings/
+
+# Local backup archives stay outside repository history
+/Backups/
+
+# IDE output and workspace-local tooling
+/.vs/
+/.idea/
+/.codex/
+/.agents/
+/.aws/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+*.log
+
+# Local credentials and signing material
+.env
+.env.*
+!.env.example
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.key
+
+# Operating system metadata
+.DS_Store
+Thumbs.db
+Desktop.ini
